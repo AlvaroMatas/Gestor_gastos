@@ -23,7 +23,7 @@ public class gastos {
             }else if (opcion == 2){
                 verTodosGastos(nombre_gasto, gasto, cantidad_gastos);
             }else if (opcion == 3){
-
+                verGastoTot(nombre_gasto, gasto, cantidad_gastos);
             }else if (opcion == 4){
 
             }else{
@@ -62,4 +62,20 @@ public class gastos {
             }
         }
     }
+
+    public static void verGastoTot(String[] nombre_gasto, double[] gasto, int cantidad_gastos){
+        if (cantidad_gastos == 0){
+            System.out.println("No tienes ningún gasto");
+            return;
+        }else{
+            double suma = 0;
+            for (int i = 0; i < cantidad_gastos; i++){
+                suma += gasto[i];
+            }
+
+            System.out.println("Gasto total: " + suma + "€");
+        }
+    }
+
+    
 }
