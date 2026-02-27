@@ -84,15 +84,18 @@ public class gastos {
     public static void gastoMasAlto(String[] nombre_gasto, double[] gasto, int cantidad_gastos){
         double mas_alto = gasto[0];
         String nombre_mas_alto = nombre_gasto[0];
+
+        if(cantidad_gastos == 0){
+            System.out.println("No tienes ningún gasto");
+        }
+
         for (int i = 1; i < cantidad_gastos; i++){
             if (gasto[i] > mas_alto){
                 mas_alto = gasto[i];
                 nombre_mas_alto = nombre_gasto[i];
-
-                System.out.println("El gasto más alto es: " + nombre_mas_alto + " - " + mas_alto + "€");
-            }else{
-                System.out.println("No tienes ningún gasto");
             }
         }
+
+        System.out.println("El gasto más alto es: " + nombre_mas_alto + " - " + mas_alto + "€");
     }
 }
