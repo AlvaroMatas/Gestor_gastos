@@ -18,18 +18,22 @@ public class gastos {
             System.out.print("Selecciona una opción: ");
             int opcion = sc.nextInt();
 
-            if (opcion == 1){
-                cantidad_gastos = añadirGasto(nombre_gasto, gasto, sc, cantidad_gastos);
-            }else if (opcion == 2){
-                verTodosGastos(nombre_gasto, gasto, cantidad_gastos);
-            }else if (opcion == 3){
-                verGastoTot(nombre_gasto, gasto, cantidad_gastos);
-            }else if (opcion == 4){
-
+            if (opcion > 5 || opcion < 1) {
+                System.out.println("Elige una opción disponible");
             }else{
-                System.out.println("Saliendo del programa........");
+                if (opcion == 1){
+                cantidad_gastos = añadirGasto(nombre_gasto, gasto, sc, cantidad_gastos);
+                }else if (opcion == 2){
+                    verTodosGastos(nombre_gasto, gasto, cantidad_gastos);
+                }else if (opcion == 3){
+                    verGastoTot(nombre_gasto, gasto, cantidad_gastos);
+                }else if (opcion == 4){
+                    gastoMasAlto(nombre_gasto, gasto, cantidad_gastos);
+                }else{
+                    System.out.println("Saliendo del programa........");
 
                 break;
+            }
             }
         }
     }
