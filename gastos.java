@@ -13,7 +13,7 @@ public class gastos {
             System.out.println("2. Ver todos los gastos");
             System.out.println("3. Ver el gasto total");
             System.out.println("4. Ver gasto más alto");
-            System.out.println("Salir");
+            System.out.println("5. Salir");
             System.out.println();
             System.out.print("Selecciona una opción: ");
             int opcion = sc.nextInt();
@@ -21,7 +21,7 @@ public class gastos {
             if (opcion == 1){
                 cantidad_gastos = añadirGasto(nombre_gasto, gasto, sc, cantidad_gastos);
             }else if (opcion == 2){
-
+                verTodosGastos(nombre_gasto, gasto, cantidad_gastos);
             }else if (opcion == 3){
 
             }else if (opcion == 4){
@@ -49,6 +49,17 @@ public class gastos {
             System.out.println("Gasto añadido correctamente");
 
             return cantidad_gastos;
+        }
+    }
+
+    public static void verTodosGastos(String[] nombre_gasto, double[] gasto, int cantidad_gastos){
+        if (cantidad_gastos == 0){
+            System.out.println("No tienes ningún gasto");
+            return;
+        }else{
+            for (int i = 0; i < cantidad_gastos; i++){
+                System.out.println("Gasto " + (i + 1) + ": " + nombre_gasto[i] + " - " + gasto[i] + "€");
+            }
         }
     }
 }
